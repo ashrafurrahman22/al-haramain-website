@@ -1,26 +1,58 @@
+import { sendEmailVerification } from 'firebase/auth';
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin.js/SocialLogin';
 
 const Signup = () => {
+
+  const [
+    createUserWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification:true});
+  const navigate = useNavigate();
+  let errorMessage;
+
+  if(user){
+    navigate('/');
+  }
+  if(loading){
+    return <Loading></Loading>
+  }
+  if(error){
+    errorMessage = error.message;
+  }
+
+  const handleSubmit = event =>{
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    console.log('clicked', email, password, user)
+    createUserWithEmailAndPassword(email, password);
+  }
+
     return (
         <div id="login" className="w-50 mx-auto my-3 mb-5">
       <h2 className="text-center">Sign Up</h2>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" placeholder="Enter Name" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" required />
+          <Form.Control name='email' type="email" placeholder="Enter email" required />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" required />
+          <Form.Control name='password' type="password" placeholder="Password" required />
         </Form.Group>
-        <p className="text-center"></p>
+        <p className="text-center">{errorMessage}</p>
         <Button variant="primary" type="submit">
           Sign Up
         </Button>
