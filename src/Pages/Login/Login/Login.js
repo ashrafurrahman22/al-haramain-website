@@ -1,10 +1,12 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import SocialLogin from "../SocialLogin.js/SocialLogin";
+import './Login.css';
 
 const Login = () => {
   return (
-    <div className="w-50 mx-auto my-3 mb-5">
+    <div id="login" className="w-50 mx-auto my-3 mb-5">
       <h2 className="text-center">Login</h2>
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -38,13 +40,16 @@ const Login = () => {
         </div>
       </div>
 
-      <div>
-        <div className="d-flex">
-          <p style={{ height: "1px" }} className="bg-dark"></p>
-          <p>or</p>
-          <p style={{ height: "1px" }} className="bg-dark"></p>
+      <div className="m-2">
+        <div className="d-flex align-items-center">
+          <div id="orDiv"></div>
+          <div className="mx-2">or</div>
+          <div id="orDiv"></div>
         </div>
       </div>
+      <div>
+        <SocialLogin></SocialLogin>
+        </div>
     </div>
   );
 };
