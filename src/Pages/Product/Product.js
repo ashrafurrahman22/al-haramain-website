@@ -9,8 +9,6 @@ const Product = ({product}) => {
     const navigateToProductDetails = id =>{
         navigate(`/inventory/${id}`);
     }
-
-
     return (
         <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src={img} />
