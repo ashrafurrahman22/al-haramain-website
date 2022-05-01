@@ -1,8 +1,16 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Product = ({product}) => {
-    const {name, img, price, description, quantity} = product;
+    const {id,name, img, price, description, quantity, supplier} = product;
+    const navigate = useNavigate();
+
+    const navigateToProductDetails = id =>{
+        navigate(`/inventory/${id}`);
+    }
+
+
     return (
         <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src={img} />
@@ -14,8 +22,10 @@ const Product = ({product}) => {
     <div>
     <h4>Price: ${price}</h4>
       <p>Quantity: {quantity}</p>
+      <p>Supplier: {supplier}</p>
     </div>
-    <Button variant="primary">Update</Button>
+      <button onClick={() => navigateToProductDetails(id)} className='btn btn-primary w-100'>Update Stocks</button>
+    
   </Card.Body>
 </Card>
     );

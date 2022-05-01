@@ -5,16 +5,12 @@ import carousel2 from '../../images/Carousel/carousel 2.jpg'
 import carousel3 from '../../images/Carousel/carousel 3.jpg'
 import Product from '../Product/Product';
 import './Home.css';
+import useProducts from '../../Hooks/useProducts.js';
 
 const Home = () => {
-    const [products, setProducts] = useState([]);
-    useEffect( ()=>{
-        fetch('data.json')
-        .then(res => res.json())
-        .then(data => setProducts(data))
-    } , [])
+    const [products, setProducts] = useProducts();
     return (
-        <div>
+        <div id='home'>
             {/* banner div */}
             <div>
             <img className='img-fulid w-100' src={carousel1} alt="" />
@@ -22,11 +18,12 @@ const Home = () => {
             <img className='img-fulid w-100' src={carousel3} alt="" />
             </div>
         {/* inventory div */}
-        <div id='inventoryitem'>
-            <h3 className='text-center my-3 p-2'>New Arrival</h3>
-            <div className='container' id='products'>
+        <div>
+            <h3 className='text-center my-3 p-2'>Inventory</h3>
+            <div className='container my-3' id='products'>
             {
-                products.map(product => <Product
+                products.slice(0,6).map(product => <Product
+                key={product.id}
                 product = {product}
                 ></Product>  )
             }

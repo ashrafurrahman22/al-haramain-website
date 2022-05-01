@@ -3,6 +3,7 @@ import './App.css';
 import AddItems from './Pages/AddItems/AddItems';
 import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home';
+import DetailsInventory from './Pages/DetailsInventory/DetailsInventory';
 import Login from './Pages/Login/Login/Login';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import Signup from './Pages/Login/Signup/Signup';
@@ -19,6 +20,11 @@ function App() {
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
           <Route path='/home' element={<Home></Home>}></Route>
+          <Route path='/inventory/:productId' element={
+            <RequireAuth>
+              <DetailsInventory></DetailsInventory>
+            </RequireAuth>
+          }></Route>
           <Route path='/blogs' element={<Blogs></Blogs>}></Route>
           <Route path='/manageitems' element={
             <RequireAuth>
