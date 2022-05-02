@@ -1,10 +1,9 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import './Product.css'
 
 const Product = ({product}) => {
-    const {id,name, img, price, description, quantity, supplier} = product;
+    const {name, img, price, quantity, supplier} = product;
     const navigate = useNavigate();
 
     const navigateToProductDetails = id =>{
@@ -14,16 +13,12 @@ const Product = ({product}) => {
         <Card style={{ width: '18rem' }}>
   <Card.Img variant="top" src={img} />
   <Card.Body>
-    <Card.Title>{name}</Card.Title>
-    <Card.Text>
-      {description}
-    </Card.Text>
-    <div>
+    <Card.Title className='text-center'>{name}</Card.Title>
+    <div className='text-center'>
     <h4>Price: ${price}</h4>
       <p>Quantity: {quantity}ml</p>
-      <p>Supplier: {supplier}</p>
     </div>
-      <button id='btn-update' onClick={() => navigateToProductDetails(id)} className="btn btn-primary w-100" >Update Stocks</button>
+      
     
   </Card.Body>
 </Card>
