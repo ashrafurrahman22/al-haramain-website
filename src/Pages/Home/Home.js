@@ -25,7 +25,7 @@ const Home = () => {
             <div className='container my-3' id='products'>
             {
                 products.slice(0,6).map(product => <Product
-                key={product.id}
+                key={product._id}
                 product = {product}
                 ></Product>  )
             }
@@ -39,7 +39,7 @@ const Home = () => {
             <div id='newArrival'>
             {
                 products.slice(6,10).map(product => <NewArrival
-                    key={product.id}
+                    key={product._id}
                     product = {product}
                 ></NewArrival>  )
             }

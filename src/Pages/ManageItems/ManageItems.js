@@ -14,7 +14,7 @@ const ManageItems = () => {
             <div id='manageItems' className='container my-3'>
             {
                 products.map(product => <SingleProduct
-                key={product.id}
+                key={product._id}
                 product = {product}
                 ></SingleProduct> )
             }

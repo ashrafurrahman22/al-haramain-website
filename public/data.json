@@ -2,10 +2,10 @@
     {"id" : 1, "name": "Golden Oudh", "price" : "50", "description" :
     "50 Years Golden Oudh is the epitome of 50 years of excellence in perfumery. This majestic blend consists of the finest oud, extracted from the khasiana tree species over 50 years ago, and has now matured to beyond perfection.", "quantity" : "100", "img" : "https://fimgs.net/himg/o.98426.jpg", "supplier" : "Al Haramain Perfumes"},
 
-    {"id" : 2, "name": "Najm Gold", "price" : "40", "description" :
+    { "id" : 2, "name": "Najm Gold", "price" : "40", "description" :
     "Najm Gold by Al Haramain Perfumes is a Amber Vanilla fragrance for women and men. This is a new fragrance. Najm Gold was launched in 2018. The nose behind this fragrance is Christian Carbonnel. Top note is Bergamot; middle notes are Vanilla and Coconut; base notes are Vanilla, Musk and Sandalwood.", "quantity" : "70", "img" : "https://shop.alharamainperfumes.com/media/catalog/product/cache/b1ec24c2900d0fb0e95a9fa4fb1f48b8/a/h/ahp_1872_najm_gold_bottle.jpg", "supplier" : "Al Haramain Perfumes"},
 
-    {"id" : 3, "name": "Najm Noir", "price" : "30", "description" :
+    { "id" : 3, "name": "Najm Noir", "price" : "30", "description" :
     "Najm Noir by Al Haramain Perfumes is a Floral Woody Musk fragrance for women. This is a new fragrance. Najm Noir was launched in 2018. The nose behind this fragrance is Christian Carbonnel.", "quantity" : "70", "img" : "https://shop.alharamainperfumes.com/media/catalog/product/cache/b1ec24c2900d0fb0e95a9fa4fb1f48b8/a/h/ahp_1873_najm_noir_bottle.jpg", "supplier" : "Al Haramain Perfumes"},
 
     {"id" : 4, "name": "Hayati", "price" : "60", "description" :
@@ -28,9 +28,9 @@
     {"id" : 10, "name": "Euphoric Roots Spray", "price" : "95", "description" :
     "This is perfection in battle purely magical aroma that appeals to your inner passions; this is what the Haramain Portfolio Euphoric Roots represents. A fragrance that is an impressive aura of allure and a living tribute to class.", "quantity" : "30", "img" : "https://shop.alharamainperfumes.com/media/catalog/product/cache/b1ec24c2900d0fb0e95a9fa4fb1f48b8/a/h/ahp1083_portfolio_euphoric_roots-picture.jpg",  "supplier" : "Al Haramain Perfumes"},
 
-    {"id" : 10, "name": "Golden Oudh Spray", "price" : "75", "description" :
+    {"id" : 11, "name": "Golden Oudh Spray", "price" : "75", "description" :
     "AL HARAMAIN GOLDEN OUD SPRAY 100ml, comes with a great scent and the perfection of a well balanced perfume that will cater for all the needs of the user who wants more than what the ordinary user needs with life", "quantity" : "100", "img" : "https://shop.alharamainperfumes.com/media/catalog/product/cache/b1ec24c2900d0fb0e95a9fa4fb1f48b8/o/_/o.98425.jpg", "supplier" : "Al Haramain Perfumes"},
 
-    {"id" : 10, "name": "Amber Oudh Gold", "price" : "50", "description" :
+    {"id" : 12, "name": "Amber Oudh Gold", "price" : "50", "description" :
     "aramain Amber Oud Gold Edition 60ml Spray  comes with a great scent and the perfection of a well balanced perfume that will cater for all the needs of the user who wants more than what the ordinary user needs with life.", "quantity" : "60", "img" : "https://shop.alharamainperfumes.com/media/catalog/product/cache/b1ec24c2900d0fb0e95a9fa4fb1f48b8/a/m/amber_oud_gold_bottle.png", "supplier" : "Al Haramain Perfumes"}
 ]
