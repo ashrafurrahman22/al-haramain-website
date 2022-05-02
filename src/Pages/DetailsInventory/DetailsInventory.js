@@ -8,7 +8,6 @@ import useProducts from '../../Hooks/useProducts';
 const DetailsInventory = () => {
     const {productId} = useParams();
 
-    console.log(productId);
     const [product, setProduct] = useState({});
     const [products, setProducts] = useState([]);
 
@@ -25,7 +24,7 @@ const DetailsInventory = () => {
     const {name, img, price, description, quantity, supplier} = product;
 
     return (
-        <div>  
+        <div>
               {
                   product && <div className='container gap-5 my-3 d-lg-flex align-items-center justify-content-center'>
                       <div className='w-50'><img className='rounded-3 img-fluid w-100' src={img} alt="" /></div>

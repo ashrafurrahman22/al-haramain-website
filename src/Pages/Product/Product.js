@@ -23,7 +23,7 @@ const Product = ({product}) => {
       <p>Quantity: {quantity}ml</p>
       <p>Supplier: {supplier}</p>
     </div>
-      <button id='btn-update' onClick={() => navigateToProductDetails(_id)} className="btn btn-primary w-100" >Update Stocks</button>
+      <button id='btn-update' onClick={() => navigateToProductDetails(_id, name, img, description, quantity, supplier)} className="btn btn-primary w-100" >Update Stocks</button>
     
   </Card.Body>
 </Card>
