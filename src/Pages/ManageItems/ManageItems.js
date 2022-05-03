@@ -11,7 +11,7 @@ const ManageItems = () => {
             <div className='text-center my-3'>
             <Link className='btn btn-primary w-50' to='/additem'>Add New Item</Link>
             </div>
-            <div id='manageItems' className='container my-3'>
+            <div className='container my-3 w-100'>
             {
                 products.map(product => <SingleProduct
                 key={product._id}

@@ -1,0 +1,12 @@
+#myImg {
+    width: 180px;
+    border-radius: 10px;
+}
+
+#singleProduct {
+    border: 1px solid goldenrod;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
