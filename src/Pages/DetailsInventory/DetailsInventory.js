@@ -7,26 +7,20 @@ import useProducts from '../../Hooks/useProducts';
 
 const DetailsInventory = () => {
     const {productId} = useParams();
+    const [data, setData] = useState({});
 
-    const [product, setProduct] = useState({});
-    const [products, setProducts] = useState([]);
-
-    useEffect( ()=>{
-        fetch('http://localhost:5000/product')
+    useEffect(()=>{
+        const url = `http://localhost:5000/product/${productId}`
+        fetch(url)
         .then(res => res.json())
-        .then(data => {
-            const productDetails = data?.find(p => p._id === productId)
-            console.log(productDetails);
-            setProduct(productDetails);
-        })
-    } , [])
+        .then(result => setData(result))
+    },[])
 
-    const {name, img, price, description, quantity, supplier} = product;
+    const {name, img, price, description, quantity, supplier} = data;
 
     return (
-        <div>
-              {
-                  product && <div className='container gap-5 my-3 d-lg-flex align-items-center justify-content-center'>
+        <div> 
+            <div className='container gap-5 my-3 d-lg-flex align-items-center justify-content-center'>
                       <div className='w-50'><img className='rounded-3 img-fluid w-100' src={img} alt="" /></div>
                       <div className='w-50'>
                           <h3>{name}</h3>
@@ -44,7 +38,6 @@ const DetailsInventory = () => {
                   
                       </div>
                   </div>
-              }
         </div>
     );
 };

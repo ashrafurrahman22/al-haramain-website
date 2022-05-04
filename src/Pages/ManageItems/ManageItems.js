@@ -6,6 +6,7 @@ import './ManageItems.css'
 
 const ManageItems = () => {
     const [products] = useProducts();
+
     return (
         <div>
             <div className='text-center my-3'>
