@@ -3,20 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import useProductDetail from '../../Hooks/useProductDetail';
 import useProducts from '../../Hooks/useProducts';
 
 const DetailsInventory = () => {
     const {productId} = useParams();
-    const [data, setData] = useState({});
-
-    useEffect(()=>{
-        const url = `http://localhost:5000/product/${productId}`
-        fetch(url)
-        .then(res => res.json())
-        .then(result => setData(result))
-    },[])
+    const [data] = useProductDetail(productId);
 
     const {name, img, price, description, quantity, supplier} = data;
+
 
     return (
         <div> 
