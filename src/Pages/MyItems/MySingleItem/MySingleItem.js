@@ -1,8 +1,15 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 
 const MySingleItem = ({item}) => {
     const {name, img, description, quantity, supplier, price} = item;
+    
+    const handleClick = () =>{
+      const procede = window.confirm('Are You Sure To Delete this item?');
+      if(procede){
+        console.log('success');
+      }
+    }
     return (
         <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={img} />
@@ -14,6 +21,7 @@ const MySingleItem = ({item}) => {
           </Card.Text>
           <Card.Text>Quantity: {quantity}ml
           </Card.Text>
+          <Button onClick={handleClick} variant="primary" className='w-100'>Delete Item</Button>
         </Card.Body>
       </Card>
     );
