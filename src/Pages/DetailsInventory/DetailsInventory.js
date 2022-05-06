@@ -5,6 +5,7 @@ import { Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import useProductDetail from '../../Hooks/useProductDetail';
 import useProducts from '../../Hooks/useProducts';
+import './DetailsInventory.css'; 
 
 const DetailsInventory = () => {
     const {productId} = useParams();
@@ -12,6 +13,19 @@ const DetailsInventory = () => {
 
     const {name, img, price, description, quantity, supplier} = data;
 
+    const handleRestock = event => {
+        event.preventDefault();
+        const amount = event.target.amount.value;
+        const parsedQuantity = parseInt(quantity);
+        const total = parsedQuantity + parseInt(amount);
+        console.log(total);
+    }
+
+    const handleDelivered = () => {
+      const itemQuantity = parseInt(quantity);
+      const reduce = itemQuantity - 1;
+      console.log(reduce);
+    }
 
     return (
         <div> 
@@ -23,13 +37,18 @@ const DetailsInventory = () => {
                       <h5>Price: ${price}</h5>
                       <h5>Quantity: {quantity}ml</h5>
                       <h5>Supplier: {supplier}</h5>
-                      <button className='btn btn-primary w-100'>Delivered
-                      <FontAwesomeIcon icon={faPersonWalking}></FontAwesomeIcon>
-                      </button>
-                      <form className='my-3'>
-                        <input className='w-100 rounded-3' type="text" name="number" placeholder='Put your stock amount' />
+                      
+                      <div id='restock'>
+                        <h3 className='text-center my-2'>Update Stock</h3>
+                      <form onSubmit={handleRestock} className='my-3'>
+                        <input className='w-100 rounded-3' type="text" name="amount" placeholder='Put your stock amount' required/>
                         <input className='btn btn-primary w-100 my-3' type="submit" value="Restock"/>
                       </form>
+                      <h4 className='text-center mb-3'>Is Delivery Complete?</h4>
+                      <button onClick={handleDelivered} className='btn btn-primary w-100'>Delivered
+                      <FontAwesomeIcon icon={faPersonWalking}></FontAwesomeIcon>
+                      </button>
+                      </div>
                   
                       </div>
                   </div>

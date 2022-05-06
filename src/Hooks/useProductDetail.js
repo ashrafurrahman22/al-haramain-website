@@ -9,7 +9,7 @@ const useProductDetail = productId =>{
         .then(res => res.json())
         .then(result => setData(result))
     },[productId])
-    return [data] ;
+    return [data, setData] ;
 }
 
 export default useProductDetail;
