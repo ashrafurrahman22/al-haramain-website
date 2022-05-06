@@ -8,9 +8,11 @@ const SingleProduct = ({product}) => {
     const {name, img, price, description, quantity, supplier, _id} = product;
     const [products, setProducts] = useProducts();
 
+    console.log(products.length);
+
     const handleDelete = id =>{
       const procede = window.confirm('Are You Sure?');
-      if(procede){
+      if(procede && products.length > 10){
         const url = `http://localhost:5000/product/${id}`
         fetch(url, {
           method : "DELETE"
@@ -22,6 +24,9 @@ const SingleProduct = ({product}) => {
           setProducts(remaining);
           console.log(remaining);
         })
+      }
+      else{
+        alert("Sorry. We Can't delete the first 10 product")
       }
     }
 
