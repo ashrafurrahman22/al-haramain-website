@@ -26,7 +26,8 @@ const DetailsInventory = () => {
     const handleRestock = event => {
         event.preventDefault();
         const amount = event.target.amount.value;
-        const parsedQuantity = parseInt(quantity);
+        if (amount > 0){
+          const parsedQuantity = parseInt(quantity);
         const total = parsedQuantity + parseInt(amount);
         console.log(total);
 
@@ -48,6 +49,11 @@ const DetailsInventory = () => {
           toast('Stock Amount Updated Successfully');
           event.target.reset();
         })
+        }
+        else {
+          alert('Please Type a Positive amount of Stock')
+          event.target.reset();
+        }
     }
 
     const handleDelivered = () => {
@@ -74,15 +80,15 @@ const DetailsInventory = () => {
     }
 
     return (
-        <div> 
+        <div id='details'>
             <div className='container gap-5 my-3 d-lg-flex align-items-center justify-content-center'>
                       <div className='w-50'><img className='rounded-3 img-fluid w-100' src={img} alt="" /></div>
                       <div className='w-50'>
                           <h3>{name}</h3>
                         <p>{description}</p>
                       <h5>Price: ${price}</h5>
-                      <h5>Quantity: {quantity}ml</h5>
                       <h5>Supplier: {supplier}</h5>
+                      <h2 className='text-center'>Stock/Quantity: {quantity}ml</h2>
                       
                       <div id='restock'>
                         <h3 className='text-center my-2'>Update Stock</h3>
