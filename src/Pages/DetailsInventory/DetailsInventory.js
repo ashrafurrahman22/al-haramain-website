@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import useProductDetail from '../../Hooks/useProductDetail';
 import useProducts from '../../Hooks/useProducts';
 import './DetailsInventory.css'; 
@@ -10,6 +12,14 @@ import './DetailsInventory.css';
 const DetailsInventory = () => {
     const {productId} = useParams();
     const [data] = useProductDetail(productId);
+    const [user, setUser] = useState({});
+
+    useEffect(()=>{
+      const url = `http://localhost:5000/product/${productId}`
+      fetch(url)
+      .then(res => res.json())
+      .then(data => setUser(data))
+    }, [])
 
     const {name, img, price, description, quantity, supplier} = data;
 
@@ -19,12 +29,48 @@ const DetailsInventory = () => {
         const parsedQuantity = parseInt(quantity);
         const total = parsedQuantity + parseInt(amount);
         console.log(total);
+
+        const newItem = {...data,quantity:total} ;
+        console.log(newItem);
+
+        // send data to server
+        const url = `http://localhost:5000/product/${productId}`
+        fetch(url, {
+          method : 'PUT',
+          headers : {
+            'content-type' : 'application/json'
+          },
+          body : JSON.stringify(newItem)
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log('success', data);
+          toast('Stock Amount Updated Successfully');
+          event.target.reset();
+        })
     }
 
     const handleDelivered = () => {
       const itemQuantity = parseInt(quantity);
-      const reduce = itemQuantity - 1;
-      console.log(reduce);
+      const delivered = itemQuantity - 1;
+      console.log(delivered);
+      const newItem = {...data,quantity:delivered} ;
+      console.log(newItem);
+
+      // send data to server
+      const url = `http://localhost:5000/product/${productId}`
+      fetch(url, {
+        method : 'PUT',
+        headers : {
+          'content-type' : 'application/json'
+        },
+        body : JSON.stringify(newItem)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log('success', data);
+        toast('Delivered Successfully');
+      })
     }
 
     return (
@@ -49,7 +95,7 @@ const DetailsInventory = () => {
                       <FontAwesomeIcon icon={faPersonWalking}></FontAwesomeIcon>
                       </button>
                       </div>
-                  
+                      <ToastContainer></ToastContainer>
                       </div>
                   </div>
         </div>

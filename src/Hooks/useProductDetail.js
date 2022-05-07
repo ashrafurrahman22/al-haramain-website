@@ -8,7 +8,7 @@ const useProductDetail = productId =>{
         fetch(url)
         .then(res => res.json())
         .then(result => setData(result))
-    },[productId])
+    },[productId, data])
     return [data, setData] ;
 }
 
