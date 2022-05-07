@@ -8,8 +8,6 @@ const SingleProduct = ({product}) => {
     const {name, img, price, description, quantity, supplier, _id} = product;
     const [products, setProducts] = useProducts();
 
-    console.log(products.length);
-
     const handleDelete = id =>{
       const procede = window.confirm('Are You Sure?');
       if(procede && products.length > 10){

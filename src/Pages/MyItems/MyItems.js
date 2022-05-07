@@ -20,7 +20,7 @@ const MyItems = () => {
         }
         getItems();
         
-    }, [user]);
+    }, [user, items]);
     console.log(items)
     return ( <div id='mainItemDiv' className='my-4'>
             <h3 className='text-center'>My Items</h3>

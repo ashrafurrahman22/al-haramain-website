@@ -4,10 +4,17 @@ import { Button, Card } from 'react-bootstrap';
 const MySingleItem = ({item}) => {
     const {name, img, description, quantity, supplier, price} = item;
     
-    const handleClick = () =>{
-      const procede = window.confirm('Are You Sure To Delete this item?');
+    const handleDelete = id =>{
+      const procede = window.confirm('Are You Sure?');
       if(procede){
-        console.log('success');
+        const url = `http://localhost:5000/addItem/${id}`
+        fetch(url, {
+          method : "DELETE"
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data)
+        })
       }
     }
     return (
@@ -21,7 +28,7 @@ const MySingleItem = ({item}) => {
           </Card.Text>
           <Card.Text>Quantity: {quantity}ml
           </Card.Text>
-          <Button onClick={handleClick} variant="primary" className='w-100'>Delete Item</Button>
+          <Button onClick={()=>handleDelete(item._id)} variant="primary" className='w-100'>Delete Item</Button>
         </Card.Body>
       </Card>
     );
