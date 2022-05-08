@@ -3,10 +3,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import useProducts from '../../Hooks/useProducts';
 import './SingleProduct.css';
+import { useNavigate } from 'react-router-dom';
+
 
 const SingleProduct = ({product}) => {
     const {name, img, price, description, quantity, supplier, _id} = product;
     const [products, setProducts] = useProducts();
+
+    // ____________________
+    const navigate = useNavigate();
+
+    const navigateToProductDetails = id =>{
+        navigate(`/inventory/${id}`);
+    }
+    // -----------------------
 
     const handleDelete = id =>{
       const procede = window.confirm('Are You Sure?');
@@ -40,6 +50,9 @@ const SingleProduct = ({product}) => {
                   <h4>Price: ${price}</h4>
                   <h5>Quantity: {quantity}ml</h5>
                   
+              </div>
+              <div>
+                <button onClick={()=>navigateToProductDetails(product._id)} className='btn btn-primary'>Update Stock</button>
               </div>
               <div>
                 <button onClick={()=>handleDelete(product._id)} className='btn btn-danger me-5'> <span className='me-2'>Delete</span>
