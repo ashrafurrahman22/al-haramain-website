@@ -58,25 +58,31 @@ const DetailsInventory = () => {
 
     const handleDelivered = () => {
       const itemQuantity = parseInt(quantity);
-      const delivered = itemQuantity - 1;
-      console.log(delivered);
-      const newItem = {...data,quantity:delivered} ;
-      console.log(newItem);
-
-      // send data to server
-      const url = `https://safe-basin-69461.herokuapp.com/product/${productId}`
-      fetch(url, {
-        method : 'PUT',
-        headers : {
-          'content-type' : 'application/json'
-        },
-        body : JSON.stringify(newItem)
-      })
-      .then(res => res.json())
-      .then(data => {
-        console.log('success', data);
-        toast('Delivered Successfully');
-      })
+      if(itemQuantity > 0){
+        const delivered = itemQuantity - 1;
+        console.log(delivered);
+        const newItem = {...data,quantity:delivered} ;
+        console.log(newItem);
+  
+        // send data to server
+        const url = `https://safe-basin-69461.herokuapp.com/product/${productId}`
+        fetch(url, {
+          method : 'PUT',
+          headers : {
+            'content-type' : 'application/json'
+          },
+          body : JSON.stringify(newItem)
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log('success', data);
+          toast('Delivered Successfully');
+        })
+      }
+      else {
+        alert('No Stock')
+      }
+      
     }
 
     return (
