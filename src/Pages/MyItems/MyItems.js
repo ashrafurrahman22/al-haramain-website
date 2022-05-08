@@ -14,7 +14,7 @@ const MyItems = () => {
 
         const getItems = async() =>{
             const email = user.email;
-            const url = `http://localhost:5000/addItem?email=${email}`;
+            const url = `https://safe-basin-69461.herokuapp.com/addItem?email=${email}`;
             const {data} = await axios.get(url);
             setItems(data);
         }

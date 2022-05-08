@@ -7,7 +7,7 @@ const MySingleItem = ({item}) => {
     const handleDelete = id =>{
       const procede = window.confirm('Are You Sure?');
       if(procede){
-        const url = `http://localhost:5000/addItem/${id}`
+        const url = `https://safe-basin-69461.herokuapp.com/addItem/${id}`
         fetch(url, {
           method : "DELETE"
         })

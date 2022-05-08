@@ -11,7 +11,7 @@ const SingleProduct = ({product}) => {
     const handleDelete = id =>{
       const procede = window.confirm('Are You Sure?');
       if(procede && products.length > 10){
-        const url = `http://localhost:5000/product/${id}`
+        const url = `https://safe-basin-69461.herokuapp.com/product/${id}`
         fetch(url, {
           method : "DELETE"
         })

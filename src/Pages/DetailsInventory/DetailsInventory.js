@@ -15,7 +15,7 @@ const DetailsInventory = () => {
     const [user, setUser] = useState({});
 
     useEffect(()=>{
-      const url = `http://localhost:5000/product/${productId}`
+      const url = `https://safe-basin-69461.herokuapp.com/product/${productId}`
       fetch(url)
       .then(res => res.json())
       .then(data => setUser(data))
@@ -35,7 +35,7 @@ const DetailsInventory = () => {
         console.log(newItem);
 
         // send data to server
-        const url = `http://localhost:5000/product/${productId}`
+        const url = `https://safe-basin-69461.herokuapp.com/product/${productId}`
         fetch(url, {
           method : 'PUT',
           headers : {
@@ -64,7 +64,7 @@ const DetailsInventory = () => {
       console.log(newItem);
 
       // send data to server
-      const url = `http://localhost:5000/product/${productId}`
+      const url = `https://safe-basin-69461.herokuapp.com/product/${productId}`
       fetch(url, {
         method : 'PUT',
         headers : {
@@ -88,7 +88,7 @@ const DetailsInventory = () => {
                         <p>{description}</p>
                       <h5>Price: ${price}</h5>
                       <h5>Supplier: {supplier}</h5>
-                      <h2 className='text-center'>Stock/Quantity: {quantity}ml</h2>
+                      <h2 className='text-center'>Stock/Quantity:  { quantity ?  <span>{quantity}ml</span> : <span>Sold Out</span> } </h2>
                       
                       <div id='restock'>
                         <h3 className='text-center my-2'>Update Stock</h3>

@@ -16,7 +16,7 @@ const AddItems = () => {
   
   const onSubmit = data => {
     console.log(data)
-    const url = `http://localhost:5000/product`;
+    const url = `https://safe-basin-69461.herokuapp.com/product`;
     fetch(url,{
       method : 'POST',
       headers : {
@@ -27,7 +27,7 @@ const AddItems = () => {
     .then(res => res.json())
     .then(result => console.log(result));
 
-    axios.post('http://localhost:5000/addItem', data)
+    axios.post('https://safe-basin-69461.herokuapp.com/addItem', data)
     .then(response =>{
       const {data} = response;
       console.log(response);
