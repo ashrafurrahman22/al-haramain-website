@@ -30,9 +30,6 @@ const Home = () => {
                 ></Product>  )
             }
             </div>
-            <div className='text-center my-4'>
-            <Link to='/manageitems' className='btn btn-primary'>Manage Inventory</Link>
-            </div>
         </div>
             <div className='mx-5'>
             <h2 className='text-center my-3 p-2'>New Arrival</h2>

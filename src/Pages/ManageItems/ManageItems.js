@@ -8,9 +8,8 @@ const ManageItems = () => {
     const [products] = useProducts();
 
     return (
-        <div>
+        <div  style={{fontFamily:"Raleway"}}>
             <div className='text-center my-3'>
-            <Link className='btn btn-primary w-50' to='/additem'>Add New Item</Link>
             </div>
             <div className='container my-3 w-100'>
             {

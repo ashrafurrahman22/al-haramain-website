@@ -15,7 +15,7 @@ import Header from './Pages/Shared/Header/Header';
 
 function App() {
   return (
-    <div>
+    <div style={{fontFamily:"aleo"}}>
       <Header></Header>
         <Routes>
           <Route path='/' element={<Home></Home>}></Route>
