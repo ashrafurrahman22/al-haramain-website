@@ -7,6 +7,7 @@ Al Haramain Perfumes is based in United Arab Emirates is and well known for the 
 * Inventory/Product History
 * Product Stock updating handling
 * Product Add & Delete system
+* Responsive Design
 * Email Password authentication with social Account
 
 # Used Libraries
