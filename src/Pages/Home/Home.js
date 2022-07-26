@@ -32,7 +32,7 @@ const Home = () => {
             </div>
         </div>
             <div className='mx-5'>
-            <h2 style={{fontFamily:"Raleway"}} className='text-center my-3 p-2'>New Arrival</h2>
+            <h2 style={{fontFamily:"Raleway"}} className='text-center font-weight-bold my-3 p-2'>New Arrival</h2>
             <div style={{fontFamily:"Aleo"}} id='newArrival'>
             {
                 products.slice(6,10).map(product => <NewArrival
