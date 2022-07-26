@@ -11,7 +11,7 @@ const Product = ({product}) => {
         navigate(`/inventory/${id}`);
     }
     return (
-        <Card style={{ width: '18rem', fontFamily:"Aleo" }}>
+        <Card>
   <Card.Img variant="top" src={img} />
   <Card.Body>
     <Card.Title>{name}</Card.Title>

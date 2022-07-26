@@ -40,7 +40,7 @@ const AddItems = () => {
 
 
     return (
-        <div id='addItem' style={{height:'530px'}} className='mx-auto my-5'>
+        <div id='addItem' style={{height:'530px', fontFamily:"Aleo"}} className='mx-auto my-5'>
           <h3 className='text-center'>Add a New Product</h3>
     <form className='d-flex flex-column gap-3' onSubmit={handleSubmit(onSubmit)}>
       <input placeholder='Email' type='email' value={user?.email} {...register("email", {required:true})} readOnly />
