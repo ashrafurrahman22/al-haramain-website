@@ -32,8 +32,8 @@ const Home = () => {
             </div>
         </div>
             <div className='mx-5'>
-            <h2 style={{fontFamily:"Aleo"}} className='text-center my-3 p-2'>New Arrival</h2>
-            <div id='newArrival'>
+            <h2 style={{fontFamily:"Raleway"}} className='text-center my-3 p-2'>New Arrival</h2>
+            <div style={{fontFamily:"Aleo"}} id='newArrival'>
             {
                 products.slice(6,10).map(product => <NewArrival
                     key={product._id}
@@ -42,7 +42,7 @@ const Home = () => {
             }
             </div>
                 <div className='mx-5 my-5'>
-                <h2 style={{fontFamily:"Aleo"}} className='text-center my-3 p-2'>Gift Items</h2>
+                <h2 style={{fontFamily:"Raleway"}} className='text-center my-3 p-2'>Gift Items</h2>
                     <div className='d-flex gap-3'>
                         <div className='w-50'>
                             <img className='img-fluid w-100' src={"https://shop.alharamainperfumes.com/media/wysiwyg/AHP_signature_Home_page.png"} alt="" />

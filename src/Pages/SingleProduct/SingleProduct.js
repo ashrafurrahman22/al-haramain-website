@@ -45,7 +45,7 @@ const SingleProduct = ({product}) => {
               <div className='w-25'>
                 <img id='myImg' className='img-fluid-lg' src={img} alt="" />
               </div>
-              <div className='d-lg-flex align-items-center justify-content-between gap-5'>
+              <div style={{fontFamily:"Aleo"}} className='d-lg-flex align-items-center justify-content-between gap-5'>
                   <h3>{name}</h3>
                   <h4>Price: ${price}</h4>
                   <h5>Quantity: {quantity}ml</h5>
