@@ -26,11 +26,12 @@ const Header = () => {
             <Nav.Link as={Link} to='/blogs'>Blogs</Nav.Link>
           </Nav>
           <Nav>
-            {
-              user ? <div className='d-lg-flex'>
-            <Nav.Link as={Link} to="/manageitems">Manage Items</Nav.Link>
+          <Nav.Link as={Link} to="/manageitems">Manage Items</Nav.Link>
             <Nav.Link as={Link} to="/additem">Add Item</Nav.Link>
             <Nav.Link as={Link} to="/myitems">My Items</Nav.Link>
+            {
+              user ? <div className='d-lg-flex'>
+            
             <button onClick={handleLogOut} className='btn btn-primary'>Logout</button>
               </div> :
             <Nav.Link as={Link} to="/login">Login</Nav.Link>
